@@ -1,6 +1,7 @@
 package com.example.root.popup;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -31,6 +32,10 @@ public class RoundRectLayout  extends FrameLayout {
 
     public RoundRectLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.RoundRectLayout);
+        int roundCorner = ta.getDimensionPixelSize(R.styleable.RoundRectLayout_CornerRadius, 0);
+        setRadius(roundCorner);
+        ta.recycle();
         mLayer = new RectF();
         mClipPath = new Path();
         mPaint = new Paint();

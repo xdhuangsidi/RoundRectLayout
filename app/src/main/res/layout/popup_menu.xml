@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.root.popup.RoundRectLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    >
+<com.example.root.popup.RoundRectLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/rc_layout"
-    android:background="@drawable/shadow_95052"
+    app:CornerRadius="4dp"
     >
 <LinearLayout
     android:layout_width="196dp"
@@ -39,3 +48,4 @@
 
 </LinearLayout>
 </com.example.root.popup.RoundRectLayout>
+</android.support.v7.widget.CardView>

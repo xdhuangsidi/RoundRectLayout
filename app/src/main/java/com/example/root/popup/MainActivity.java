@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -41,8 +42,13 @@ public class MainActivity extends Activity {
         window.setOutsideTouchable(true);
         window.setBackgroundDrawable(new BitmapDrawable());
         RoundRectLayout rcRelativeLayout = content_view.findViewById(R.id.rc_layout);
-        rcRelativeLayout.setRadius(12.5f);
         ListView listView = content_view.findViewById(R.id.listview);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, "test" + position,  Toast.LENGTH_SHORT).show();
+            }
+        });
         listView.setAdapter(adapter);
         TextView tv1 = content_view.findViewById(R.id.webview_more_fresh_text);
         tv1.setOnClickListener(new View.OnClickListener() {
